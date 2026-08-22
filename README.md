@@ -21,6 +21,22 @@ dan laporan inventaris secara real-time.
 
 KINETIC adalah sistem manajemen inventaris gudang berbasis web yang dibangun sebagai Tugas Akhir UKM Progress 2026. Sistem ini mendukung pencatatan stok masuk/keluar, alur persetujuan transaksi, analitik real-time, dan kontrol akses berbasis role untuk empat jenis pengguna.
 
+## Screenshot
+<div align="center">
+  <img src="storage/app/public/screenshots/Dashboard.png" alt="Dashboard" width="700"/>
+  <p><em>Dashboard : ringkasan stok real-time</em></p>
+</div>
+
+<div align="center">
+  <img src="storage/app/public/screenshots/Produk.png" alt="Produk" width="700"/>
+  <p><em>Halaman Produk : daftar produk</em></p>
+</div>
+
+<div align="center">
+  <img src="storage/app/public/screenshots/Analitik.png" alt="Analitik" width="700"/>
+  <p><em>Halaman Analitik : tren stok 30 hari</em></p>
+</div>
+
 ## Tech Stack
 
 | Layer | Teknologi |
