@@ -1,58 +1,214 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div align="center">
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# KINETIC
+### Sistem Manajemen Inventaris Gudang
 
-## About Laravel
+Aplikasi web untuk mengelola stok barang, transaksi masuk/keluar, supplier,
+dan laporan inventaris secara real-time.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+![Laravel](https://img.shields.io/badge/Laravel-13-FF2D20?style=flat-square&logo=laravel&logoColor=white)
+![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Inertia](https://img.shields.io/badge/Inertia.js-v2-9553E9?style=flat-square&logo=inertia&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind-v3-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-16A34A?style=flat-square)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+</div>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## Tentang Project
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+KINETIC adalah sistem manajemen inventaris gudang berbasis web yang dibangun sebagai Tugas Akhir UKM Progress 2026. Sistem ini mendukung pencatatan stok masuk/keluar, alur persetujuan transaksi, analitik real-time, dan kontrol akses berbasis role untuk empat jenis pengguna.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Tech Stack
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+| Layer | Teknologi |
+|---|---|
+| **Backend** | Laravel 13 (PHP 8.3+) |
+| **Frontend** | React 18 + Inertia.js v2 |
+| **Styling** | Tailwind CSS v3 |
+| **UI Components** | Headless UI React |
+| **Database** | MySQL 8.0 + Eloquent ORM |
+| **Auth** | Laravel Breeze (Inertia + React) |
+| **Charts** | Recharts |
+| **Routes (JS)** | Ziggy |
+| **Testing** | Pest |
+| **Build Tool** | Vite 8 |
 
-## Agentic Development
+## Fitur
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+- **Dashboard** — statistik ringkasan stok, transaksi, dan alert stok minimum
+- **Produk** — CRUD produk dengan foto, SKU unik, zona gudang, harga beli/jual
+- **Kategori** — pengelompokan produk berdasarkan kategori
+- **Supplier** — pengelolaan data supplier dengan status aktif/nonaktif
+- **Gudang** — tampilan zona gudang untuk distribusi stok
+- **Transaksi Stok** — pencatatan stok masuk, keluar, dan penyesuaian dengan alur approval
+- **Laporan** — laporan stok dengan filter periode
+- **Analitik** — tren stok 30 hari, top produk, heatmap harian, distribusi kategori
+- **Manajemen User** — CRUD user dengan role-based akses (admin only)
+- **Profil** — pengaturan profil dan ubah password
 
+## Role & Permission
+
+| Fitur | Admin | Manager | Staff | Viewer |
+|---|:---:|:---:|:---:|:---:|
+| Kelola User | ✅ | ❌ | ❌ | ❌ |
+| CRUD Produk | ✅ | ✅ | ✅ | ❌ |
+| CRUD Kategori | ✅ | ✅ | ✅ | ❌ |
+| CRUD Supplier | ✅ | ✅ | ❌ | ❌ |
+| Input Transaksi | ✅ | ✅ | ✅ | ❌ |
+| Approve Transaksi | ✅ | ✅ | ❌ | ❌ |
+| Lihat Laporan | ✅ | ✅ | ❌ | ❌ |
+| Analitik | ✅ | ✅ | ❌ | ❌ |
+| Lihat Dashboard | ✅ | ✅ | ✅ | ✅ |
+
+## Instalasi
+
+### Prasyarat
+
+Pastikan sudah terinstall di komputer kamu:
+
+- PHP 8.3+
+- MySQL 8.0+
+- Node.js 20+
+- Composer
+
+### Langkah Setup
+
+**1. Clone repository**
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/[username]/kinetic-inventory.git
+cd kinetic-inventory
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+**2. Install dependencies**
+```bash
+composer install
+npm install --legacy-peer-deps
+```
 
-## Contributing
+**3. Setup environment**
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+**4. Konfigurasi database**
 
-## Code of Conduct
+Buka file `.env` lalu sesuaikan:
+```env
+DB_DATABASE=web_tugasakhir
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**5. Jalankan migration & seeder**
+```bash
+php artisan migrate
+php artisan db:seed
+```
 
-## Security Vulnerabilities
+**6. Jalankan development server**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Buka dua terminal secara bersamaan:
+```bash
+# Terminal 1
+php artisan serve
+# → http://localhost:8000
 
-## License
+# Terminal 2
+npm run dev
+# → Vite dev server (HMR)
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Akun Bawaan (Seeder)
+
+| Role | Email | Password |
+|---|---|---|
+| Admin | admin@inventaris.test | password |
+| Manager | manager@inventaris.test | password |
+| Staff | staff@inventaris.test | password |
+| Viewer | viewer@inventaris.test | password |
+
+> ⚠️ Akun di atas hanya untuk keperluan development/demo. Ganti password sebelum deploy ke production.
+
+## Struktur Database
+
+```
+users
+├── id, name, email, password, role, is_active, last_active_at
+
+categories
+├── id, name, description
+
+suppliers
+├── id, name, email, phone, address, status
+
+products
+├── id, category_id (FK), supplier_id (FK)
+├── name, sku (unique), photo
+├── buy_price, sell_price, stock_quantity, min_stock
+├── zone, created_by (FK)
+
+stock_transactions
+├── id, product_id (FK), user_id (FK)
+├── type (in/out/adjustment)
+├── quantity, note
+├── status (pending/approved/rejected)
+├── approved_by (FK), approved_at
+```
+
+## Struktur Proyek
+
+```
+app/
+├── Http/
+│   ├── Controllers/        # 10 Controllers
+│   ├── Middleware/         # RoleMiddleware
+│   └── Requests/           # Form Request Validation
+├── Models/                 # User, Category, Product, Supplier, StockTransaction
+└── Services/               # Business logic
+
+resources/js/
+├── Pages/                  # 30 halaman React (Inertia)
+├── Components/             # AppLayout, Sidebar, DataTable, dll.
+└── hooks/                  # usePermission, useFlash
+
+database/
+├── migrations/             # 8 migration files
+└── seeders/
+
+routes/
+├── web.php
+└── auth.php
+```
+
+## Perintah Berguna
+
+```bash
+# Development
+php artisan serve
+npm run dev
+
+# Database
+php artisan migrate
+php artisan db:seed
+php artisan migrate:fresh --seed   # reset & seed ulang
+
+# Generate file
+php artisan make:model NamaModel -mfsc
+php artisan make:request NamaRequest
+
+# Cache (production)
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+
+# Testing
+php artisan test
+```
+
+## Lisensi
+
+Didistribusikan di bawah [MIT License](LICENSE).

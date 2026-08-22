@@ -23,21 +23,6 @@ const C = {
 const MONO = "'IBM Plex Mono', monospace";
 const SANS = "'IBM Plex Sans', sans-serif";
 
-function ExportBtn() {
-    return (
-        <div className="group/exp relative">
-            <button className="p-1 text-[#6B7280] hover:text-[#1B2A3B] transition-colors cursor-pointer">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M8 2v8m0 0l-3-3m3 3l3-3M2 11.333V12.667A1.333 1.333 0 003.333 14h9.334A1.333 1.333 0 0014 12.667v-1.334" />
-                </svg>
-            </button>
-            <div className="absolute bottom-full right-0 mb-1.5 px-2 py-1 bg-[#1B2A3B] text-white whitespace-nowrap opacity-0 group-hover/exp:opacity-100 transition-opacity pointer-events-none z-20" style={{ fontFamily: MONO, fontSize: '10px', borderRadius: '2px' }}>
-                Ekspor sebagai CSV
-            </div>
-        </div>
-    );
-}
-
 function PanelHeader({ title, subtitle, children }) {
     return (
         <div className="flex items-center justify-between px-5 py-3.5" style={{ borderBottom: `1px solid ${C.border}` }}>
@@ -47,7 +32,6 @@ function PanelHeader({ title, subtitle, children }) {
             </div>
             <div className="flex items-center gap-2">
                 {children}
-                <ExportBtn />
             </div>
         </div>
     );
