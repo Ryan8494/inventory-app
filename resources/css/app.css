@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        @apply antialiased;
+    }
+    body {
+        @apply font-sans text-steel bg-chalk;
+    }
+    h1, h2, h3, h4 {
+        @apply font-heading font-semibold text-deep;
+    }
+}
+
+@layer components {
+    .card {
+        @apply bg-surface border border-line rounded-lg shadow-card;
+    }
+
+    .input-field {
+        @apply w-full border border-line rounded-sm px-3 py-2 text-sm text-deep
+               placeholder:text-gray-400
+               focus:border-primary focus:ring-1 focus:ring-primary
+               transition-colors duration-150;
+    }
+
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium
+               rounded-sm transition-all duration-150 focus:outline-none
+               disabled:opacity-50 disabled:cursor-not-allowed;
+    }
+
+    .btn-primary {
+        @apply btn bg-primary text-white hover:bg-primary-600 active:bg-primary-700
+               shadow-sm hover:shadow-md;
+    }
+
+    .btn-secondary {
+        @apply btn bg-white text-steel border border-line hover:bg-chalk active:bg-line;
+    }
+
+    .btn-danger {
+        @apply btn bg-red-500 text-white hover:bg-red-600 active:bg-red-700;
+    }
+
+    .btn-ghost {
+        @apply btn text-steel hover:bg-chalk active:bg-line;
+    }
+
+    .badge {
+        @apply inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-sm;
+    }
+
+    .badge-success {
+        @apply badge bg-emerald-50 text-emerald-700 border border-emerald-200;
+    }
+
+    .badge-warning {
+        @apply badge bg-amber-50 text-amber-700 border border-amber-200;
+    }
+
+    .badge-danger {
+        @apply badge bg-red-50 text-red-700 border border-red-200;
+    }
+
+    .badge-info {
+        @apply badge bg-blue-50 text-blue-700 border border-blue-200;
+    }
+
+    .badge-neutral {
+        @apply badge bg-gray-50 text-gray-600 border border-gray-200;
+    }
+
+    .page-header {
+        @apply flex items-center justify-between mb-6;
+    }
+
+    .page-title {
+        @apply text-xl font-heading font-semibold text-deep;
+    }
+
+    .table-container {
+        @apply card overflow-hidden;
+    }
+
+    .table-header {
+        @apply bg-chalk border-b border-line;
+    }
+
+    .table-row {
+        @apply border-b border-line last:border-0 hover:bg-chalk/50 transition-colors;
+    }
+
+    .empty-state {
+        @apply flex flex-col items-center justify-center py-16 text-center;
+    }
+}

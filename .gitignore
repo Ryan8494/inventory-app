@@ -1,0 +1,61 @@
+# Logs & cache
+*.log
+storage/pail
+.phpunit.result.cache
+.phpunit.cache
+
+# Environment
+.env
+.env.backup
+.env.production
+.env.local
+.env.*.local
+
+# Dependencies
+/vendor
+/node_modules
+
+# Build artifacts
+/public/build
+/public/hot
+/public/fonts-manifest.dev.json
+/public/storage
+
+# Bootstrap cache
+/bootstrap/cache/*.php
+
+# IDE & editor
+/.vscode
+/.idea
+/.cursor/
+/.zed
+/.codex
+.phpactor.json
+_ide_helper.php
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Laravel storage keys
+/storage/*.key
+
+# Auth & homestead
+/auth.json
+Homestead.json
+Homestead.yaml
+
+# Testing & linting
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+coverage/
+.nyc_output/
+
+
+AGENTS.md
+DESIGN.md
